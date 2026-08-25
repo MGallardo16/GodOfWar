@@ -1,0 +1,83 @@
+body{
+
+ height: 100%;
+
+ margin: 0;
+
+}
+
+
+
+.carousel-caption {
+
+ background: rgba(0, 0, 0, 0.6);
+
+ padding: 15px;
+
+ border-radius: 8px;
+
+}
+
+
+
+.carousel-caption h5 {
+
+ font-size: 2rem;
+
+ font-weight: bold;
+
+ color: #fff;
+
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+
+}
+
+
+
+.carousel-caption p {
+
+ font-size: 1.2rem;
+
+ color: #ddd; 
+
+ text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+
+}
+
+
+
+.carousel-item {
+
+ height: 100vh; /* Ajusta este valor (ej: 75vh o 80vh) según si tienes navbar arriba */
+
+}
+
+
+
+/* Fuerza a las imágenes a encajar sin deformarse */
+
+.carousel-item img {
+
+ height: 100%;
+
+ object-fit: cover; /* Mantiene la proporción de la imagen */
+
+}
+
+
+
+/* Eleva un poco la caja negra del texto */
+
+.carousel-caption {
+
+ background: rgba(0, 0, 0, 0.6);
+
+ padding: 15px;
+
+ border-radius: 8px;
+
+ bottom: 2.5rem; /* Asegura espacio suficiente respecto al borde inferior */
+
+}
+
+
