@@ -1,10 +1,20 @@
-body{
-
- height: 100%;
-
- margin: 0;
-
+body {
+    height: 100%;
+    margin: 0;
+    background-image: url('https://i.pinimg.com/originals/8e/fb/81/8efb811334069955fcdcc5183522db21.gif');
+    background-size: cover;
+    font-family: 'Cinzel', serif;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4); 
+  z-index: -1; 
+}
+
 
 
 
@@ -16,6 +26,13 @@ body{
 
  border-radius: 8px;
 
+}
+
+
+#reseña {
+  background: rgba(255,255,255,0.7); 
+  padding: 20px;
+  border-radius: 10px;
 }
 
 
@@ -48,25 +65,24 @@ body{
 
 .carousel-item {
 
- height: 100vh; /* Ajusta este valor (ej: 75vh o 80vh) según si tienes navbar arriba */
-
+ height: 100vh; 
 }
 
 
 
-/* Fuerza a las imágenes a encajar sin deformarse */
+
 
 .carousel-item img {
 
  height: 100%;
 
- object-fit: cover; /* Mantiene la proporción de la imagen */
+ object-fit: cover; 
 
 }
 
 
 
-/* Eleva un poco la caja negra del texto */
+
 
 .carousel-caption {
 
@@ -81,3 +97,33 @@ body{
 }
 
 
+.navbar {
+  background-color: #0a0a0a; 
+}
+
+.navbar .nav-link {
+  color: #ffffff; 
+  transition: all 0.3s ease; 
+}
+
+.navbar .nav-link:hover {
+  background-color: #b00; 
+  color: #ffd700; 
+  border-radius: 5px; 
+  padding: 5px 10px; 
+}
+.btnDanger{
+    background-color: #b00; 
+    color: #ffffff;
+}
+.btnDanger:hover{
+    background-color: #b00; 
+    color: #ffd700;
+}
+
+.textoOro{
+    color: #ffd700;
+}
+.textoOro:hover{
+    color: #b00;
+}

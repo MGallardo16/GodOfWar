@@ -1,4 +1,113 @@
 <!-- Marce -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-weight: bold;" href="index.html">God Of War</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="historia.html">Historia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="personajes.html">Personajes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reseña.html">Reseña</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tiendas.html">Tiendas</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section id="reseña" class="container mt-5">
+  <h2 class="mb-4">Reseña del Juego</h2>
+  <form id="formReseña">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" required>
+    </div>
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="apellido" required>
+    </div>
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input type="email" class="form-control" id="correo" required>
+    </div>
+    <div class="mb-3">
+      <label for="comentario" class="form-label">Comentario</label>
+      <textarea class="form-control" id="comentario" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-danger btnDanger">Enviar Reseña</button>
+  </form>
+
+  <!-- Contenedor para mostrar reseñas -->
+  <div id="listaReseñas" class="mt-5">
+    <h3>Reseñas enviadas</h3>
+    <!-- Aquí se insertarán las reseñas con JS -->
+  </div>
+</section>
+
+<script>
+  // Guardamos el formulario en una variable
+  const form = document.getElementById("formReseña");
+
+  // Guardamos el contenedor donde aparecerán las reseñas
+  const lista = document.getElementById("listaReseñas");
+
+  // Escuchamos el evento "submit" del formulario
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Evita que la página se recargue al enviar
+
+    // Tomamos los valores escritos en cada campo
+    const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;
+    const correo = document.getElementById("correo").value;
+    const comentario = document.getElementById("comentario").value;
+
+    // Creamos un nuevo bloque (div) para mostrar la reseña
+    const reseña = document.createElement("div");
+
+    // Le damos clases de Bootstrap para que se vea como una tarjeta
+    reseña.classList.add("card", "mb-3", "bg-dark", "text-light", "border-danger");
+
+    // Definimos el contenido HTML de la tarjeta con los datos del formulario
+    reseña.innerHTML = `
+      <div class="card-body">
+        <h4 class="card-title textoOro">${nombre} ${apellido}</h4> <!-- Nombre y apellido como título -->
+        <h6 class="card-subtitle mb-2 textoOro">${correo}</h6> <!-- Correo debajo -->
+        <p class="card-text textoOro">${comentario}</p> <!-- Comentario escrito -->
+      </div>
+    `;
+
+    // Agregamos la tarjeta al contenedor de reseñas
+    lista.appendChild(reseña);
+
+    // Limpiamos el formulario para que quede listo para otra reseña
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
 
 <!-- Blanco Rojo -->
